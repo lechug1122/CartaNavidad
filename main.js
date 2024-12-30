@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const interval = setInterval(() => {
     const todayDate = new Date();
-    const secDiff = Math.floor((testDate.getTime() - todayDate.getTime()) / 1000);
+    const secDiff = Math.floor((nextYearDate.Time() - todayDate.getTime()) / 1000);
     const days = Math.floor((secDiff / (60 * 60)) / 24);
     const hours = Math.floor(secDiff / (60 * 60)) % 24;
     const minutes = Math.floor(secDiff / 60) % 60;
