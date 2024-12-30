@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const interval = setInterval(() => {
     const todayDate = new Date();
-    const secDiff = Math.floor((nextYearDate.Time() - todayDate.getTime()) / 1000);
+    const secDiff = Math.floor((nextYearDate.getTime() - todayDate.getTime()) / 1000);
     const days = Math.floor((secDiff / (60 * 60)) / 24);
     const hours = Math.floor(secDiff / (60 * 60)) % 24;
     const minutes = Math.floor(secDiff / 60) % 60;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(interval); // Detener el intervalo
     }
   }, 1000);
-  myButton.addEventListener('click', () => {
+    myButton.addEventListener('click', () => {
     const link = document.createElement('a');
     link.href = 'Carta.pdf';
     link.download = 'Carta.pdf';
