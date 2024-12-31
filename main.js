@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Configurar una fecha de prueba para 10 segundos en el futuro
-  const testDate = new Date();
-  testDate.setSeconds(testDate.getSeconds() + 10);
-  const nextYear = (new Date()).getFullYear() + 1;
+  const currentYear = new Date().getFullYear();
+  const nextYear = currentYear + 1;
   const nextYearDate = new Date(nextYear, 0, 1);
+
   const myButton = document.getElementById('myButton');
   if (myButton) {
-    myButton.style.display = 'none'; // Ocultar el botón al inicio
-    console.log('Botón oculto al inicio');
+    if (currentYear >= 2025) {
+      myButton.style.display = 'block'; // Mostrar el botón si ya es 2025 o posterior
+      console.log('Botón mostrado porque ya es 2025 o posterior');
+    } else {
+      myButton.style.display = 'none'; // Ocultar el botón al inicio
+      console.log('Botón oculto al inicio');
+    }
   } else {
     console.error('No se encontró el botón con id "myButton".');
   }
@@ -50,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(interval); // Detener el intervalo
     }
   }, 1000);
-    myButton.addEventListener('click', () => {
+
+  myButton.addEventListener('click', () => {
     const link = document.createElement('a');
     link.href = 'Carta.pdf';
     link.download = 'Carta.pdf';
